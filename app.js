@@ -38,12 +38,28 @@ app.get("/", function(req, res) {
     res.redirect("/blogs");
 });
 
+// INDEX ROUTES
 app.get("/blogs", function(req, res) {
     blog.find({}, function(err, blogs) {
         if(err) {
             console.log("error", err);
         } else {
             res.render("index", {blogs: blogs});
+        }
+    });
+});
+// NEW ROUTE
+app.get("/blogs/new", function(req, res) {
+    res.render("new");
+});
+
+// CREATE ROUTE
+app.post("/blogs", function(req, res) {
+    blog.create(req.body.blog, function(err, newBlog) {
+        if(err) {
+            console.log("error", err);
+        } else {
+            res.redirect("/blogs");
         }
     });
 });

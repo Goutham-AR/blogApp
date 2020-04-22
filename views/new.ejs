@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<div class="ui main container segment">
+    <div class="ui huge header">New Blog</div>
+    <form action="/blogs" method="POST" class="ui form">
+        <div class="field">
+            <label for="">Title</label>
+            <input type="text" name="blog[title]" placeholder="Title" autocomplete="off">
+        </div>
+        <div class="field">
+            <label for="">Image</label>
+            <input type="text" name="blog[image]" placeholder="image" autocomplete="off">
+        </div>
+        <div class="field">
+            <label for="">Blog Content</label>
+            <textarea name="blog[body]" id="" cols="30" rows="10" required autocomplete="off"></textarea>
+        </div>
+        <div class="field">
+            <input type="submit" class="ui inverted blue button big">
+        </div>
+        
+       
+        
+        
+    </form>
+</div>
+
+
+<%- include("partials/footer.ejs") %>
