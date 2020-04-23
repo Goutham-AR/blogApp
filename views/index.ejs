@@ -1,8 +1,35 @@
 <%- include("partials/header.ejs") %>
-<% blogs.forEach(function(blog) {   %>
-    <h2><%=blog.title%></h2>
-    <img src="<%=blog.image%>" alt="">
-    <h3><%= blog.created %></h3>
-    <p><%=blog.body%></p>
-<% }); %>
+<div class="ui main text container">
+    <div class="ui huge header">Blog App</div>
+    <div class="ui top attached segment" style="background-color: #024249;">
+        <div class="ui divided items">
+            <% blogs.forEach(function(blog) {   %>
+                <div class="item">
+                    <div class="image">
+                        <img src="<%=blog.image%>" alt="" width="40%">
+                    </div>
+                    <div class="content">
+                        <a style="color:white" class="header" href="/blogs/<%= blog.id %> ">
+                            <%= blog.title %> 
+                        </a>
+                        <div class="meta">
+                            <span style="color: wheat;"><%= blog.created.toDateString() %></span>
+                        </div>
+                        <div class="description">
+                            <p style="color: white;"><%=blog.body.substring(0, 100)%>...</p>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic orange button" href="blogs/<%=blog._id%>">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+        </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
 <%- include("partials/footer.ejs") %>

@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+<div class="ui main text container segment" style="background-color: #024249;">
+    <div class="ui huge header" style="color: white">
+        <%= blogPost.title %> 
+    </div>
+    <div class="ui top attached" style="background-color: #024249;">
+        <div class="item" style="background-color: #024249;">
+            <img class="ui centered rounded image" src="<%=blogPost.image%>" alt="" width="50%">
+            <div class="content">
+                <span><%=blogPost.created.toDateString()%> </span>
+            </div>
+            <div class="description">
+                <p><%= blogPost.body %> </p>
+            </div>
+            <a class="ui orange basic button" href="/blogs/<%=blogPost._id%>/edit">Edit Post</a>
+            <form style="display:inline" action="/blogs/<%=blogPost._id%>?_method=DELETE" method="POST">
+                <button class="ui red basic button"> Delete</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<%- include("partials/footer.ejs") %>

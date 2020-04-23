@@ -1,4 +1,7 @@
-
+body {
+    background-color: #16817a;
+    color: white;
+}
 
 i.icon {
     font-size: 2em;
@@ -6,4 +9,30 @@ i.icon {
 
 .container.main {
     margin-top: 7.0em;
+    background-color: #fa744f;;
+}
+
+input, textarea {
+    background-color: #024249!important;
+    color: white!important;
+}
+
+::placeholder {
+    color: white!important;
+}
+
+footer {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+p.copyright {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    line-height: 40px;
+    font-size: 0.7em;
+    text-align: center;
+    bottom:0;
 }

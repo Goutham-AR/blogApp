@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %> 
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= blog.title %> </div>
+    <form action="/blogs/<%=blog._id%>?_method=PUT" method="POST" class="ui form">
+        <div class="field">
+            <label for="">Title</label>
+            <input type="text" name="blog[title]" value="<%= blog.title %>" autocomplete="off">
+        </div>
+        <div class="field">
+            <label for="">Image</label>
+            <input type="text" name="blog[image]" value="<%= blog.image %>" autocomplete="off">
+        </div>
+        <div class="field">
+            <label for="">Blog Content</label>
+            <textarea name="blog[body]" id="" cols="30" rows="10" required autocomplete="off">
+                <%= blog.body %>
+            </textarea>
+        </div>
+        <div class="field">
+            <input type="submit" class="ui inverted blue button big">
+        </div>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %> 
